@@ -127,3 +127,8 @@ STATIC_ROOT = os.path.join(APP_ROOT_PATH, 'static')
 
 # HTTPの起点を指定
 ROOT_URLCONF = 'application.views.urls'
+
+# Login関連の設定
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/accounts/login/'
+LOGOUT_REDIRECT_URL = '/'

@@ -6,7 +6,7 @@ import camelcaseKeys from 'camelcase-keys';
 const _handleSuccess = response => {
   console.log(response.data);
   // 全てのJSONのキーをスネークケースからキャメルケースに変換する //
-  response.data = camelcaseKeys(response.data, { deep: true});
+  response.data = camelcaseKeys(response.data, { deep: true });
   return response;
 };
 
@@ -18,7 +18,7 @@ class Client {
     loadProgressBar({ showSpinner: false }, this.service);
   }
 
-  _get(path,payload) {
+  _get(path, payload) {
     return this.service.get(path, payload);
   }
 
@@ -41,15 +41,15 @@ class Client {
 }
 
 class KanbanClient extends Client {
-
+  
   constructor() {
     super();
     this.baseUrl = '/api';
   }
 
   async getAccountInfo() {
-  const response = await this._get(`${this.baseUrl}/accounts/`);
-  return response.data.accountInfo;
+    const response = await this._get(`${this.baseUrl}/accounts/`);
+    return response.data.accountInfo;
   }
 
 }

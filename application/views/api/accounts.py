@@ -8,9 +8,9 @@ class AccountsApi(View):
         """
         認証済であればログイン情報を戻す
         """
-        accounts = request.user
+        account = request.user
         # ログイン済みかのチェック
-        if accounts.is_authenticated:
+        if account.is_authenticated:
             return JsonResponse({
                 'account_info': {
                     'account_id': account.id,

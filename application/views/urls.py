@@ -4,10 +4,13 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import admin
 from django.urls import path, re_path, include
 from django.views.generic import TemplateView
+from .accounts import signup as signup_view
+
 
 urlpatterns = [
-    path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/signup/', signup_view.SignUpView.as_view(), name='signup'),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

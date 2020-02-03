@@ -52,6 +52,11 @@ class KanbanClient extends Client {
     return response.data.accountInfo;
   }
 
+  async getBoardList() {
+    const response = await this._get(`${this.baseUrl}/boards/`);
+    return response.data.boardList;
+  }
+
 }
 
 export default new KanbanClient();
